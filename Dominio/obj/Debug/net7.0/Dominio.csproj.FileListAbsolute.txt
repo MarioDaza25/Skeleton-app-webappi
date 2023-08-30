@@ -1,0 +1,12 @@
+c:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Dominio\bin\Debug\net7.0\Dominio.deps.json
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Dominio\bin\Debug\net7.0\Dominio.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Dominio\bin\Debug\net7.0\Dominio.pdb
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Dominio\obj\Debug\net7.0\Dominio.csproj.AssemblyReference.cache
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Dominio\obj\Debug\net7.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Dominio\obj\Debug\net7.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Dominio\obj\Debug\net7.0\Dominio.AssemblyInfo.cs
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Dominio\obj\Debug\net7.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Dominio\obj\Debug\net7.0\Dominio.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Dominio\obj\Debug\net7.0\refint\Dominio.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Dominio\obj\Debug\net7.0\Dominio.pdb
+c:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Dominio\obj\Debug\net7.0\ref\Dominio.dll

@@ -1,0 +1,17 @@
+c:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\bin\Debug\net7.0\Aplicacion.deps.json
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\bin\Debug\net7.0\Aplicacion.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\bin\Debug\net7.0\Aplicacion.pdb
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\bin\Debug\net7.0\Dominio.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\bin\Debug\net7.0\Persistencia.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\bin\Debug\net7.0\Dominio.pdb
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\bin\Debug\net7.0\Persistencia.pdb
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\obj\Debug\net7.0\Aplicacion.csproj.AssemblyReference.cache
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\obj\Debug\net7.0\Aplicacion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\obj\Debug\net7.0\Aplicacion.AssemblyInfoInputs.cache
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\obj\Debug\net7.0\Aplicacion.AssemblyInfo.cs
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\obj\Debug\net7.0\Aplicacion.csproj.CoreCompileInputs.cache
+c:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\obj\Debug\net7.0\Aplicacion.csproj.CopyComplete
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\obj\Debug\net7.0\Aplicacion.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\obj\Debug\net7.0\refint\Aplicacion.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\obj\Debug\net7.0\Aplicacion.pdb
+c:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Aplicacion\obj\Debug\net7.0\ref\Aplicacion.dll
