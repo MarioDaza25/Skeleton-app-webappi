@@ -1,3 +1,4 @@
+using API.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Persistencia;
 
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.ConfigureCors();
 
 builder.Services.AddDbContext<IncidenciasContext>(options =>
 {
@@ -37,6 +39,8 @@ using(var scope= app.Services.CreateScope()){
     logger.LogError(ex,"Ocurrió un error durante la migración");
     }
 }
+
+app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
 
