@@ -1,4 +1,5 @@
-﻿using Dominio.Entities;
+﻿using System.Reflection;
+using Dominio.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Persistencia;
@@ -18,4 +19,10 @@ public class IncidenciasContext : DbContext
     public DbSet<Matricula> Matriculas { get; set; }
     public DbSet<Salon> Salones { get; set; }
     public DbSet<TrainerSalon> TrainerSalones { get; set; }
+
+    protected override void OnModelCreating( ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+    }
 }

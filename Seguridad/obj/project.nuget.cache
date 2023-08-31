@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "519mc7b80BMIrygj6FlqESe4N8ocWTQMU3j0lG3ruetYmR9RiF4S6O0hF1xMCqV2TWVbQ9svC7TemqzLuiGb6Q==",
+  "dgSpecHash": "FUe83raJjmwHQrsavDcP8YRSCKWlsFNj7QHCIO0es+Qb1z3jmzN1chwFKcUeigvW96/6xXCLAkALDGvEZ9gTDw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Seguridad\\Seguridad.csproj",
+  "projectFilePath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Seguridad\\Seguridad.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mario\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\mario\\.nuget\\packages\\microsoft.identitymodel.abstractions\\6.32.2\\microsoft.identitymodel.abstractions.6.32.2.nupkg.sha512",

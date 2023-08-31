@@ -10,7 +10,7 @@ namespace Persistencia.Data.Configurations
         {
             builder.ToTable("Salon");
 
-            builder.Property(p => p.Nombresalon)
+            builder.Property(p => p.NombreSalon)
             .IsRequired()
             .HasMaxLength(50);
 

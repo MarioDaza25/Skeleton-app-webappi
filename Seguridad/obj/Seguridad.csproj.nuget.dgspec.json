@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Seguridad\\Seguridad.csproj": {}
+    "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Seguridad\\Seguridad.csproj": {}
   },
   "projects": {
-    "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Seguridad\\Seguridad.csproj": {
+    "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Seguridad\\Seguridad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Seguridad\\Seguridad.csproj",
+        "projectUniqueName": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Seguridad\\Seguridad.csproj",
         "projectName": "Seguridad",
-        "projectPath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Seguridad\\Seguridad.csproj",
+        "projectPath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Seguridad\\Seguridad.csproj",
         "packagesPath": "C:\\Users\\mario\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Seguridad\\obj\\",
+        "outputPath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Seguridad\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mario\\AppData\\Roaming\\NuGet\\NuGet.Config"

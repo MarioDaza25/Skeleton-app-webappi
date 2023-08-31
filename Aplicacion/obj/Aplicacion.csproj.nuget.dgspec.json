@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Aplicacion\\Aplicacion.csproj": {}
+    "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Aplicacion\\Aplicacion.csproj": {}
   },
   "projects": {
-    "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Aplicacion\\Aplicacion.csproj": {
+    "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Aplicacion\\Aplicacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Aplicacion\\Aplicacion.csproj",
+        "projectUniqueName": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Aplicacion\\Aplicacion.csproj",
         "projectName": "Aplicacion",
-        "projectPath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Aplicacion\\Aplicacion.csproj",
+        "projectPath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Aplicacion\\Aplicacion.csproj",
         "packagesPath": "C:\\Users\\mario\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Aplicacion\\obj\\",
+        "outputPath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Aplicacion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mario\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,11 +26,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\Dominio.csproj": {
-                "projectPath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\Dominio.csproj"
+              "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\Dominio.csproj"
               },
-              "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Persistencia\\Persistencia.csproj": {
-                "projectPath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Persistencia\\Persistencia.csproj"
+              "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Persistencia\\Persistencia.csproj": {
+                "projectPath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Persistencia\\Persistencia.csproj"
               }
             }
           }
@@ -64,14 +64,14 @@
         }
       }
     },
-    "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\Dominio.csproj",
+        "projectPath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\Dominio.csproj",
         "packagesPath": "C:\\Users\\mario\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\obj\\",
+        "outputPath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mario\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -131,14 +131,14 @@
         }
       }
     },
-    "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Persistencia\\Persistencia.csproj": {
+    "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Persistencia\\Persistencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Persistencia\\Persistencia.csproj",
+        "projectUniqueName": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Persistencia\\Persistencia.csproj",
         "projectName": "Persistencia",
-        "projectPath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Persistencia\\Persistencia.csproj",
+        "projectPath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Persistencia\\Persistencia.csproj",
         "packagesPath": "C:\\Users\\mario\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Persistencia\\obj\\",
+        "outputPath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Persistencia\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mario\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -153,8 +153,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\Dominio.csproj": {
-                "projectPath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\Dominio.csproj"
+              "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Dominio\\Dominio.csproj"
               }
             }
           }

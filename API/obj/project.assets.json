@@ -6020,11 +6020,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\API\\API.csproj",
+      "projectPath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\API\\API.csproj",
       "packagesPath": "C:\\Users\\mario\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\API\\obj\\",
+      "outputPath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\mario\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6040,8 +6040,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Aplicacion\\Aplicacion.csproj": {
-              "projectPath": "c:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Aplicacion\\Aplicacion.csproj"
+            "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Aplicacion\\Aplicacion.csproj": {
+              "projectPath": "C:\\Users\\mario\\OneDrive\\Documentos\\PROGRAMACION\\NetCore\\Skeleton-app-webappi\\Aplicacion\\Aplicacion.csproj"
             }
           }
         }
