@@ -1,4 +1,6 @@
+using System.Reflection;
 using API.Extensions;
+using AspNetCoreRateLimit;
 using Microsoft.EntityFrameworkCore;
 using Persistencia;
 
@@ -6,11 +8,20 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options => 
+{
+    options.RespectBrowserAcceptHeader = true;
+    options.ReturnHttpNotAcceptable = true;
+}).AddXmlSerializerFormatters();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.ConfigureCors();
+builder.Services.AddAplicacionService();
+builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
+builder.Services.ConfigureRateLimiting();
+builder.Services.ConfigureApiVersioning();
 
 builder.Services.AddDbContext<IncidenciasContext>(options =>
 {
@@ -41,6 +52,8 @@ using(var scope= app.Services.CreateScope()){
 }
 
 app.UseCors("CorsPolicy");
+
+app.UseIpRateLimiting();
 
 app.UseHttpsRedirection();
 

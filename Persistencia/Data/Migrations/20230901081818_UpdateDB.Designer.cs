@@ -10,8 +10,8 @@ using Persistencia;
 namespace Persistencia.Data.Migrations
 {
     [DbContext(typeof(IncidenciasContext))]
-    [Migration("20230831060359_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230901081818_UpdateDB")]
+    partial class UpdateDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -127,6 +127,15 @@ namespace Persistencia.Data.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("varchar(25)");
 
+                    b.Property<string>("ApellidoMaterno")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ApellidoPaterno")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("longtext");
+
                     b.Property<int>("IdCiudadFk")
                         .HasColumnType("int");
 
@@ -146,6 +155,12 @@ namespace Persistencia.Data.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("varchar(25)");
 
+                    b.Property<string>("Password")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IdCiudadFk");
@@ -155,6 +170,37 @@ namespace Persistencia.Data.Migrations
                     b.HasIndex("IdTPerFk");
 
                     b.ToTable("persona", (string)null);
+                });
+
+            modelBuilder.Entity("Dominio.Entities.PersonaRol", b =>
+                {
+                    b.Property<int>("IdRolFk")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdUsuarioFk")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdRolFk", "IdUsuarioFk");
+
+                    b.HasIndex("IdUsuarioFk");
+
+                    b.ToTable("PersonaRol");
+                });
+
+            modelBuilder.Entity("Dominio.Entities.Rol", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("varchar(200)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Rol", (string)null);
                 });
 
             modelBuilder.Entity("Dominio.Entities.Salon", b =>
@@ -204,7 +250,7 @@ namespace Persistencia.Data.Migrations
 
                     b.HasIndex("IdPersonaFk");
 
-                    b.ToTable("trainersalon", (string)null);
+                    b.ToTable("TrainerSalones");
                 });
 
             modelBuilder.Entity("Dominio.Entities.Ciudad", b =>
@@ -275,6 +321,25 @@ namespace Persistencia.Data.Migrations
                     b.Navigation("TipoPersona");
                 });
 
+            modelBuilder.Entity("Dominio.Entities.PersonaRol", b =>
+                {
+                    b.HasOne("Dominio.Entities.Rol", "Rol")
+                        .WithMany("PersonaRoles")
+                        .HasForeignKey("IdRolFk")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Dominio.Entities.Persona", "Persona")
+                        .WithMany("PersonaRoles")
+                        .HasForeignKey("IdUsuarioFk")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Persona");
+
+                    b.Navigation("Rol");
+                });
+
             modelBuilder.Entity("Dominio.Entities.TrainerSalon", b =>
                 {
                     b.HasOne("Dominio.Entities.Persona", "Persona")
@@ -318,7 +383,14 @@ namespace Persistencia.Data.Migrations
                 {
                     b.Navigation("Matriculas");
 
+                    b.Navigation("PersonaRoles");
+
                     b.Navigation("TrainerSalones");
+                });
+
+            modelBuilder.Entity("Dominio.Entities.Rol", b =>
+                {
+                    b.Navigation("PersonaRoles");
                 });
 
             modelBuilder.Entity("Dominio.Entities.Salon", b =>

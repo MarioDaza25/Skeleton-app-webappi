@@ -187,7 +187,7 @@ namespace Persistencia.Data.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "trainersalon",
+                name: "TrainerSalones",
                 columns: table => new
                 {
                     IdPersonaFk = table.Column<int>(type: "int", nullable: false),
@@ -195,15 +195,15 @@ namespace Persistencia.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_trainersalon", x => new { x.IdSalonFk, x.IdPersonaFk });
+                    table.PrimaryKey("PK_TrainerSalones", x => new { x.IdSalonFk, x.IdPersonaFk });
                     table.ForeignKey(
-                        name: "FK_trainersalon_Salon_IdSalonFk",
+                        name: "FK_TrainerSalones_Salon_IdSalonFk",
                         column: x => x.IdSalonFk,
                         principalTable: "Salon",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_trainersalon_persona_IdPersonaFk",
+                        name: "FK_TrainerSalones_persona_IdPersonaFk",
                         column: x => x.IdPersonaFk,
                         principalTable: "persona",
                         principalColumn: "Id",
@@ -247,8 +247,8 @@ namespace Persistencia.Data.Migrations
                 column: "IdTPerFk");
 
             migrationBuilder.CreateIndex(
-                name: "IX_trainersalon_IdPersonaFk",
-                table: "trainersalon",
+                name: "IX_TrainerSalones_IdPersonaFk",
+                table: "TrainerSalones",
                 column: "IdPersonaFk");
         }
 
@@ -259,7 +259,7 @@ namespace Persistencia.Data.Migrations
                 name: "matricula");
 
             migrationBuilder.DropTable(
-                name: "trainersalon");
+                name: "TrainerSalones");
 
             migrationBuilder.DropTable(
                 name: "Salon");
