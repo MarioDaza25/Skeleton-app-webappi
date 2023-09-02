@@ -14,7 +14,7 @@ public class IncidenciasContext : DbContext
     public DbSet<Departamento> Departamentos { get; set; }
     public DbSet<Ciudad> Ciudades { get; set; }
     public DbSet<Persona> Personas { get; set; }
-    public DbSet<TipoPersona> TipoPerosonas { get; set; }
+    public DbSet<TipoPersona> TipoPersonas { get; set; }
     public DbSet<Genero> Generos { get; set; }
     public DbSet<Matricula> Matriculas { get; set; }
     public DbSet<Salon> Salones { get; set; }
