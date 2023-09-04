@@ -1,10 +1,14 @@
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using API.Dtos;
 using API.Helpers;
+using Aplicacion.Contratos;
 using Dominio.Entities;
 using Dominio.Interfaces;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace API.Service;
 
@@ -13,12 +17,15 @@ public class UserService : IUserService
     private readonly JWT _jwt;
     private readonly IUnitOfWork _unitOfWork;
     private readonly IPasswordHasher<Persona> _passwordHasher;
+    private readonly IJwtGenerador _jwtGenerador;
 
-    public UserService(IUnitOfWork unitOfWork, IOptions<JWT> jwt, IPasswordHasher<Persona> passwordHasher)
+    public UserService(IUnitOfWork unitOfWork, IOptions<JWT> jwt, IPasswordHasher<Persona> passwordHasher, IJwtGenerador jwtGenerador)
     {
         _jwt = jwt.Value;
         _unitOfWork = unitOfWork;
         _passwordHasher = passwordHasher;
+        _jwtGenerador = jwtGenerador;
+        
     }
 
     public async Task<string> RegisterAsync(RegisterDto registerDto)
@@ -54,7 +61,7 @@ public class UserService : IUserService
                 _unitOfWork.Personas.Add(persona);
                 await _unitOfWork.SaveAsync();
 
-                return $"EL Usuario {registerDto.Username} Ha Sido Registrado Exitosamente";
+                return $"El Usuario {registerDto.Username} Ha Sido Registrado Exitosamente";
             }
             catch (Exception ex)
             {
@@ -68,7 +75,7 @@ public class UserService : IUserService
         }                
     }
     
-    /* public async Task<DatosUsuarioDto> GetTokenAsync(LoginDto model)
+    public async Task<DatosUsuarioDto> GetTokenAsync(LoginDto model)
     {
         DatosUsuarioDto datosUsuarioDto = new DatosUsuarioDto();
         var persona = await _unitOfWork.Personas
@@ -89,8 +96,9 @@ public class UserService : IUserService
             datosUsuarioDto.EstaAutenticado = true;
             JwtSecurityToken jwtSecurityToken = CreateJwtToken(persona);
             datosUsuarioDto.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
-            datosUsuarioDto.Email = persona.Email;
             datosUsuarioDto.UserName = persona.Username;
+            datosUsuarioDto.Email = persona.Email;
+            datosUsuarioDto.Token = _jwtGenerador.CrearToken(persona);
             datosUsuarioDto.Roles = persona.Roles
                                             .Select(u => u.Nombre)
                                             .ToList();
@@ -101,7 +109,35 @@ public class UserService : IUserService
         datosUsuarioDto.Mensaje = $"Credenciales incorrectas para el usuario {persona.Username}.";
         return datosUsuarioDto;
 
-    }  */
+    }  
+
+    private JwtSecurityToken CreateJwtToken(Persona persona)
+    {
+        var roles = persona.Roles;
+        var roleClaims = new List<Claim>();
+        foreach (var rol in roles)
+        {
+            roleClaims.Add(new Claim("roles", rol.Nombre));
+        }
+        var claims = new[]
+        {
+                    new Claim(JwtRegisteredClaimNames.Sub, persona.Username),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(JwtRegisteredClaimNames.Email, persona.Email),
+                    new Claim("uid", persona.Id.ToString())
+                        }
+        .Union(roleClaims);
+        var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.HasKey));
+        Console.WriteLine("", symmetricSecurityKey);
+        var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
+        var jwtSecurityToken = new JwtSecurityToken(
+            issuer: _jwt.Issuer,
+            audience: _jwt.Audience,
+            claims: claims,
+            expires: DateTime.UtcNow.AddMinutes(_jwt.DurationInMinutes),
+            signingCredentials: signingCredentials);
+        return jwtSecurityToken;
+    }
 
 
     public async Task<string> AddRolAsync(AddRolesDto model)
@@ -145,8 +181,15 @@ public class UserService : IUserService
         return $"Credenciales incorrectas para el usuario {persona.Username}.";
     }
 
-    public Task<DatosUsuarioDto> GetTokenAsync(LoginDto model)
+    public async Task<LoginDto> UserLogin(LoginDto model)
     {
-        throw new NotImplementedException();
+        var persona = await _unitOfWork.Personas.GetByUsernameAsync(model.Username);
+        var resultado = _passwordHasher.VerifyHashedPassword(persona, persona.Password, model.Password);
+
+        if (resultado == PasswordVerificationResult.Success)
+        {
+            return model;
+        }
+        return null;
     }
 }

@@ -1,19 +1,73 @@
 using Aplicacion.Repository;
 using Dominio.Interfaces;
 using Persistencia;
+using Persistencia.Data.Configurations;
 
 namespace Aplicacion.UnitOfWork;
 
 public class UnitOfWork : IUnitOfWork, IDisposable
 {
     private readonly IncidenciasContext context;
+    private CiudadRepository _ciudades;
+    private DepartamentoRepository _departamentos;
+    private GeneroRepository _generos;
+    private MatriculaRepository _matriculas;
     private PaisRepository _paises;
     private PersonaRepository _personas;
+    private RolRepository _roles;
+    private SalonRepository _salones;
+    private TPersonaRepository _tpersonas;
+
     public UnitOfWork(IncidenciasContext _context)
     {
         context = _context;
     }
 
+
+    public ICiudad Ciudades 
+    {
+        get
+        {
+            if(_ciudades == null)
+            {
+                _ciudades = new CiudadRepository(context);
+            }
+            return _ciudades;
+        }
+    }
+    public IDepartamento Departamentos 
+    {
+        get
+        {
+            if(_departamentos == null)
+            {
+                _departamentos = new DepartamentoRepository(context);
+            }
+            return _departamentos;
+        }
+    }
+    public IGenero Generos 
+    {
+        get
+        {
+            if(_generos == null)
+            {
+                _generos = new GeneroRepository(context);
+            }
+            return _generos;
+        }
+    }
+    public IMatricula Matriculas 
+    {
+        get
+        {
+            if(_matriculas == null)
+            {
+                _matriculas = new MatriculaRepository(context);
+            }
+            return _matriculas;
+        }
+    }
     public IPais Paises
     {
         get
@@ -38,7 +92,39 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         }
     }
 
-    public IRol Roles => throw new NotImplementedException();
+    public IRol Roles 
+    {
+        get
+        {
+            if(_roles == null)
+            {
+                _roles = new RolRepository(context);
+            }
+            return _roles;
+        }
+    }
+    public ISalon Salones 
+    {
+        get
+        {
+            if(_salones == null)
+            {
+                _salones = new SalonRepository(context);
+            }
+            return _salones;
+        }
+    }
+    public ITipoPersona TipoPersonas 
+    {
+        get
+        {
+            if(_tpersonas == null)
+            {
+                _tpersonas = new TPersonaRepository(context);
+            }
+            return _tpersonas;
+        }
+    }
 
     public int Save()
     {

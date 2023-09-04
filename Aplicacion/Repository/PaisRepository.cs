@@ -16,7 +16,7 @@ public class PaisRepository : GenericRepository<Pais>, IPais
 
   public override async Task<IEnumerable<Pais>> GetAllAsync()
   {
-  return await _context.Paises
+      return await _context.Paises
               .Include(p => p.Departamentos)
               .ToListAsync();
   }

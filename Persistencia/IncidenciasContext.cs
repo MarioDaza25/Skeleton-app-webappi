@@ -6,9 +6,7 @@ namespace Persistencia;
 
 public class IncidenciasContext : DbContext
 {
-    public IncidenciasContext(DbContextOptions<IncidenciasContext> options) : base(options)
-    {
-    }
+    public IncidenciasContext(DbContextOptions<IncidenciasContext> options) : base(options){}
 
     public DbSet<Pais> Paises { get; set; }
     public DbSet<Departamento> Departamentos { get; set; }
@@ -19,7 +17,10 @@ public class IncidenciasContext : DbContext
     public DbSet<Matricula> Matriculas { get; set; }
     public DbSet<Salon> Salones { get; set; }
     public DbSet<TrainerSalon> TrainerSalones { get; set; }
+    public DbSet<PersonaRol> PersonaRoles { get; set; }
+    public DbSet<Rol> Roles { get; set; }
 
+    
     protected override void OnModelCreating( ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);

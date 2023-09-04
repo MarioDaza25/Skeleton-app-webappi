@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Persistencia.Data.Configurations;
 
-public class GeneroRepository : IEntityTypeConfiguration<Genero>
+public class GeneroConfiguration : IEntityTypeConfiguration<Genero>
 {
     public void Configure(EntityTypeBuilder<Genero> builder)
     {

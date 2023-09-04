@@ -2,6 +2,7 @@ using Dominio.Entities;
 
 namespace Dominio.Interfaces;
 
-public interface IPersona : IGenericRepository<Persona>
+public interface IGenero  : IGenericRepository<Genero>
 {
+    
 }
