@@ -40,5 +40,6 @@ public class PersonaRepository : GenericRepository<Persona>, IPersona
         return await _context.Personas
                     .FirstOrDefaultAsync(p => p.Id == Id);
     }
-   
+
+    
 } 

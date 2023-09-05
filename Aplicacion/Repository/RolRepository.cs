@@ -12,4 +12,6 @@ public class RolRepository : GenericRepository<Rol>, IRol
     {
         _context = context;
     }
+
+    
 }

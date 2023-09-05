@@ -63,7 +63,7 @@ public class PaisController : BaseAPiController
         {
             return BadRequest();
         }
-        paisDto.Id = paisDto.Id;
+        paisDto.Id = pais.Id;
         return CreatedAtAction(nameof(Post), new { id = paisDto.Id }, paisDto);
     }
 

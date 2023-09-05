@@ -75,3 +75,6 @@ C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\API
 C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\API\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\API\bin\Debug\net7.0\System.CodeDom.dll
 C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\API\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\API\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\API\bin\Debug\net7.0\Seguridad.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\API\bin\Debug\net7.0\Seguridad.pdb

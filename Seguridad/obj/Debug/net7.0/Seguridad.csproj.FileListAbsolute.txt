@@ -10,3 +10,10 @@ C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Seg
 C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Seguridad\obj\Debug\net7.0\refint\Seguridad.dll
 C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Seguridad\obj\Debug\net7.0\Seguridad.pdb
 c:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Seguridad\obj\Debug\net7.0\ref\Seguridad.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Seguridad\bin\Debug\net7.0\Aplicacion.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Seguridad\bin\Debug\net7.0\Dominio.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Seguridad\bin\Debug\net7.0\Persistencia.dll
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Seguridad\bin\Debug\net7.0\Aplicacion.pdb
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Seguridad\bin\Debug\net7.0\Dominio.pdb
+C:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Seguridad\bin\Debug\net7.0\Persistencia.pdb
+c:\Users\mario\OneDrive\Documentos\PROGRAMACION\NetCore\Skeleton-app-webappi\Seguridad\obj\Debug\net7.0\Seguridad.csproj.CopyComplete

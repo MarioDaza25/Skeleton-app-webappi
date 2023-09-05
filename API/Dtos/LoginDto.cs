@@ -1,16 +1,11 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace API.Dtos
+namespace API.Dtos;
+
+public class LoginDto
 {
-    public class LoginDto
-    {
-        [Required]
-        public string Username { get; set; }
-        [Required]
-        public string Password { get; set; }
-    }
+    [Required]
+    public string Username { get; set; }
+    [Required]
+    public string Password { get; set; }
 }

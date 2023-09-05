@@ -4,5 +4,5 @@ namespace Aplicacion.Contratos;
 
 public interface IJwtGenerador
 {
-    string CrearToken(Persona persona);
+    string CrearToken(Usuario usuario);
 }

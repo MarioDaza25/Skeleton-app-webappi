@@ -16,10 +16,10 @@ public class UserService : IUserService
 {
     private readonly JWT _jwt;
     private readonly IUnitOfWork _unitOfWork;
-    private readonly IPasswordHasher<Persona> _passwordHasher;
+    private readonly IPasswordHasher<Usuario> _passwordHasher;
     private readonly IJwtGenerador _jwtGenerador;
 
-    public UserService(IUnitOfWork unitOfWork, IOptions<JWT> jwt, IPasswordHasher<Persona> passwordHasher, IJwtGenerador jwtGenerador)
+    public UserService(IUnitOfWork unitOfWork, IOptions<JWT> jwt, IPasswordHasher<Usuario> passwordHasher, IJwtGenerador jwtGenerador)
     {
         _jwt = jwt.Value;
         _unitOfWork = unitOfWork;
@@ -30,23 +30,15 @@ public class UserService : IUserService
 
     public async Task<string> RegisterAsync(RegisterDto registerDto)
     {
-        var persona = new Persona
+        var usuario = new Usuario
         {
-            IdPersona = registerDto.IdPersona,
-            Nombre = registerDto.Nombre,
-            Apellido = registerDto.Apellido,
-            ApellidoMaterno = registerDto.ApellidoMaterno,
-            ApellidoPaterno = registerDto.ApellidoPaterno,
             Email = registerDto.Email,
-            Username = registerDto.Username,
-            IdGeneroFk = registerDto.IdGeneroFk,
-            IdCiudadFk = registerDto.IdCiudadFk,
-            IdTPerFk = registerDto.IdTPerFk,
+            Username = registerDto.Username
         };
 
-        persona.Password = _passwordHasher.HashPassword(persona, registerDto.Password);
+        usuario.Password = _passwordHasher.HashPassword(usuario, registerDto.Password);
 
-        var usuarioExiste = _unitOfWork.Personas
+        var usuarioExiste = _unitOfWork.Usuarios
                         .Find(u => u.Username.ToLower() == registerDto.Username.ToLower())
                         .FirstOrDefault();
 
@@ -57,8 +49,8 @@ public class UserService : IUserService
                         .First();
             try
             {
-                persona.Roles.Add(rolPredeterminado);
-                _unitOfWork.Personas.Add(persona);
+                usuario.Roles.Add(rolPredeterminado);
+                _unitOfWork.Usuarios.Add(usuario);
                 await _unitOfWork.SaveAsync();
 
                 return $"El Usuario {registerDto.Username} Ha Sido Registrado Exitosamente";
@@ -78,42 +70,42 @@ public class UserService : IUserService
     public async Task<DatosUsuarioDto> GetTokenAsync(LoginDto model)
     {
         DatosUsuarioDto datosUsuarioDto = new DatosUsuarioDto();
-        var persona = await _unitOfWork.Personas
+        var usuario = await _unitOfWork.Usuarios
                     .GetByUsernameAsync(model.Username);
 
-        if (persona == null)
+        if (usuario == null)
         {
             datosUsuarioDto.EstaAutenticado = false;
             datosUsuarioDto.Mensaje = $"No existe ningún usuario con el username {model.Username}.";
             return datosUsuarioDto;
         }
 
-        var resultado = _passwordHasher.VerifyHashedPassword(persona, persona.Password, model.Password);
+        var resultado = _passwordHasher.VerifyHashedPassword(usuario, usuario.Password, model.Password);
 
         if (resultado == PasswordVerificationResult.Success)
         {
 
             datosUsuarioDto.EstaAutenticado = true;
-            JwtSecurityToken jwtSecurityToken = CreateJwtToken(persona);
+            JwtSecurityToken jwtSecurityToken = CreateJwtToken(usuario);
             datosUsuarioDto.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
-            datosUsuarioDto.UserName = persona.Username;
-            datosUsuarioDto.Email = persona.Email;
-            datosUsuarioDto.Token = _jwtGenerador.CrearToken(persona);
-            datosUsuarioDto.Roles = persona.Roles
+            datosUsuarioDto.UserName = usuario.Username;
+            datosUsuarioDto.Email = usuario.Email;
+            datosUsuarioDto.Token = _jwtGenerador.CrearToken(usuario);
+            datosUsuarioDto.Roles = usuario.Roles
                                             .Select(u => u.Nombre)
                                             .ToList();
             return datosUsuarioDto;
 
         }
         datosUsuarioDto.EstaAutenticado = false;
-        datosUsuarioDto.Mensaje = $"Credenciales incorrectas para el usuario {persona.Username}.";
+        datosUsuarioDto.Mensaje = $"Credenciales incorrectas para el usuario {usuario.Username}.";
         return datosUsuarioDto;
 
     }  
 
-    private JwtSecurityToken CreateJwtToken(Persona persona)
+    private JwtSecurityToken CreateJwtToken(Usuario usuario)
     {
-        var roles = persona.Roles;
+        var roles = usuario.Roles;
         var roleClaims = new List<Claim>();
         foreach (var rol in roles)
         {
@@ -121,10 +113,10 @@ public class UserService : IUserService
         }
         var claims = new[]
         {
-                    new Claim(JwtRegisteredClaimNames.Sub, persona.Username),
+                    new Claim(JwtRegisteredClaimNames.Sub, usuario.Username),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim(JwtRegisteredClaimNames.Email, persona.Email),
-                    new Claim("uid", persona.Id.ToString())
+                    new Claim(JwtRegisteredClaimNames.Email, usuario.Email),
+                    new Claim("uid", usuario.Id.ToString())
                         }
         .Union(roleClaims);
         var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.HasKey));
@@ -142,17 +134,17 @@ public class UserService : IUserService
 
     public async Task<string> AddRolAsync(AddRolesDto model)
     {
-        var persona = await _unitOfWork.Personas
+        var usuario = await _unitOfWork.Usuarios
                     .GetByUsernameAsync(model.Username);
 
 
-        if (persona == null)
+        if (usuario == null)
         {
             return $"No existe algún usuario registrado con la cuenta {model.Username}.";
         }
 
 
-        var resultado = _passwordHasher.VerifyHashedPassword(persona, persona.Password, model.Password);
+        var resultado = _passwordHasher.VerifyHashedPassword(usuario, usuario.Password, model.Password);
 
         if (resultado == PasswordVerificationResult.Success)
         {
@@ -163,13 +155,13 @@ public class UserService : IUserService
 
             if (rolExiste != null)
             {
-                var usuarioTieneRol = persona.Roles
+                var usuarioTieneRol = usuario.Roles
                                     .Any(u => u.Id == rolExiste.Id);
 
                 if (usuarioTieneRol == false)
                 {
-                    persona.Roles.Add(rolExiste);
-                    _unitOfWork.Personas.Update(persona);
+                    usuario.Roles.Add(rolExiste);
+                    _unitOfWork.Usuarios.Update(usuario);
                     await _unitOfWork.SaveAsync();
                 }
 
@@ -178,13 +170,13 @@ public class UserService : IUserService
 
             return $"Rol {model.Roles} no encontrado.";
         }
-        return $"Credenciales incorrectas para el usuario {persona.Username}.";
+        return $"Credenciales incorrectas para el usuario {usuario.Username}.";
     }
 
     public async Task<LoginDto> UserLogin(LoginDto model)
     {
-        var persona = await _unitOfWork.Personas.GetByUsernameAsync(model.Username);
-        var resultado = _passwordHasher.VerifyHashedPassword(persona, persona.Password, model.Password);
+        var usuario = await _unitOfWork.Usuarios.GetByUsernameAsync(model.Username);
+        var resultado = _passwordHasher.VerifyHashedPassword(usuario, usuario.Password, model.Password);
 
         if (resultado == PasswordVerificationResult.Success)
         {

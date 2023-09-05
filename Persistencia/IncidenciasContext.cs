@@ -17,7 +17,8 @@ public class IncidenciasContext : DbContext
     public DbSet<Matricula> Matriculas { get; set; }
     public DbSet<Salon> Salones { get; set; }
     public DbSet<TrainerSalon> TrainerSalones { get; set; }
-    public DbSet<PersonaRol> PersonaRoles { get; set; }
+    public DbSet<Usuario> Usuarios { get; set; }
+    public DbSet<UsuarioRol> UsuarioRoles { get; set; }
     public DbSet<Rol> Roles { get; set; }
 
     

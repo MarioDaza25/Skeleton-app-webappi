@@ -1,4 +1,5 @@
 using Aplicacion.Repository;
+using Dominio.Entities;
 using Dominio.Interfaces;
 using Persistencia;
 using Persistencia.Data.Configurations;
@@ -17,6 +18,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     private RolRepository _roles;
     private SalonRepository _salones;
     private TPersonaRepository _tpersonas;
+    private UsuarioRepository _usuarios;
 
     public UnitOfWork(IncidenciasContext _context)
     {
@@ -33,6 +35,18 @@ public class UnitOfWork : IUnitOfWork, IDisposable
                 _ciudades = new CiudadRepository(context);
             }
             return _ciudades;
+        }
+    }
+
+    public IUsuario Usuarios 
+    {
+        get
+        {
+            if(_usuarios == null)
+            {
+                _usuarios = new UsuarioRepository(context);
+            }
+            return _usuarios;
         }
     }
     public IDepartamento Departamentos 
@@ -141,5 +155,4 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         return await context.SaveChangesAsync();
     }
 
-    
 }

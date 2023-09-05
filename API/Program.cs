@@ -16,12 +16,13 @@ builder.Services.AddControllers(options =>
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c => {c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First()); });
 builder.Services.ConfigureCors();
 builder.Services.AddAplicacionService();
 builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
 builder.Services.ConfigureRateLimiting();
 builder.Services.ConfigureApiVersioning();
+builder.Services.AddJwt(builder.Configuration);
 
 builder.Services.AddDbContext<IncidenciasContext>(options =>
 {

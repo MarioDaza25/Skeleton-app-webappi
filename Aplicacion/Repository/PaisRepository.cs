@@ -28,7 +28,7 @@ public class PaisRepository : GenericRepository<Pais>, IPais
         {
           query = query.Where(p => p.NombrePais.ToLower().Contains(search));
         }
-         
+        query = query.OrderBy(p => p.Id); 
         var totalRegistros = await query.CountAsync();
         var registros = await query
                 .Include(p => p.Departamentos)
@@ -44,4 +44,6 @@ public class PaisRepository : GenericRepository<Pais>, IPais
                 .Include(p => p.Departamentos)
                 .FirstOrDefaultAsync(p => p.Id == Id);
   }
+
+  
 }
