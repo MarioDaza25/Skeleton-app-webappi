@@ -8,5 +8,6 @@ public interface IUnitOfWork
     IPersona Personas { get; }
     IRol Roles { get; }
     IUsuario Usuarios { get; }
+    IGenero Generos { get; }
     Task<int> SaveAsync();
 }

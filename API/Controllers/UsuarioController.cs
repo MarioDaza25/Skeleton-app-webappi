@@ -14,6 +14,8 @@ public class UsuarioController : BaseAPiController
     {
         _userService = userService;
     }
+
+    
     [HttpPost("register")]
     public async Task<ActionResult> RegisterAsync(RegisterDto model)
     {
@@ -28,7 +30,7 @@ public class UsuarioController : BaseAPiController
         return Ok(result);
     }
 
-    [HttpPost("addrole")]
+    [HttpPost("addrol")]
     public async Task<IActionResult> AddRoleAsync(AddRolesDto model)
     {
         var result = await _userService.AddRolAsync(model);

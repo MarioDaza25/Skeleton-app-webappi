@@ -69,7 +69,7 @@ public class UserService : IUserService
     
     public async Task<DatosUsuarioDto> GetTokenAsync(LoginDto model)
     {
-        DatosUsuarioDto datosUsuarioDto = new DatosUsuarioDto();
+        DatosUsuarioDto datosUsuarioDto = new();
         var usuario = await _unitOfWork.Usuarios
                     .GetByUsernameAsync(model.Username);
 
@@ -97,10 +97,13 @@ public class UserService : IUserService
             return datosUsuarioDto;
 
         }
-        datosUsuarioDto.EstaAutenticado = false;
-        datosUsuarioDto.Mensaje = $"Credenciales incorrectas para el usuario {usuario.Username}.";
-        return datosUsuarioDto;
-
+        else
+        {
+            datosUsuarioDto.EstaAutenticado = false;
+            datosUsuarioDto.Mensaje = $"Credenciales incorrectas para el usuario {usuario.Username}.";
+            return datosUsuarioDto;
+        }
+        
     }  
 
     private JwtSecurityToken CreateJwtToken(Usuario usuario)
@@ -119,6 +122,8 @@ public class UserService : IUserService
                     new Claim("uid", usuario.Id.ToString())
                         }
         .Union(roleClaims);
+
+        _jwt.HasKey = "mi_clave_secreta1245635asdfghhhgjhhhjjhjhjh";
         var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.HasKey));
         Console.WriteLine("", symmetricSecurityKey);
         var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);

@@ -58,7 +58,7 @@ public class PersonaController : BaseAPiController
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Persona>> Post(PersonaDto personaDto)
+    public async Task<ActionResult<Persona>> Post(PersonaFullDto personaDto)
     {
         var persona = _mapper.Map<Persona>(personaDto);
         _unitOfWork.Personas.Add(persona);

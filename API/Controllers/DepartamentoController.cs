@@ -60,7 +60,7 @@ public class DepartamentoController : BaseAPiController
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Departamento>> Post(DepartamentoDto departamentoDto)
+    public async Task<ActionResult<Departamento>> Post(DepxCiudadDto departamentoDto)
     {
         var departamento = _mapper.Map<Departamento>(departamentoDto);
         _unitOfWork.Departamentos.Add(departamento);
@@ -77,7 +77,7 @@ public class DepartamentoController : BaseAPiController
     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<DepartamentoDto>> Put(int id, [FromBody] DepartamentoDto departamentoDto)
+    public async Task<ActionResult<DepxCiudadDto>> Put(int id, [FromBody] DepxCiudadDto departamentoDto)
     {
         if (departamentoDto == null)
         {

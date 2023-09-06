@@ -9,8 +9,7 @@ public class MappingProfiles : Profile
 
     public MappingProfiles() 
     {
-        CreateMap<Pais,PaisDto>().ReverseMap()
-        .ForMember(o => o.Departamentos,d=> d.Ignore());
+        CreateMap<Pais,PaisDto>().ReverseMap();
 
         CreateMap<Pais,PaisxDepDto>().ReverseMap();
         
@@ -20,9 +19,16 @@ public class MappingProfiles : Profile
 
         CreateMap<Ciudad,CiudadDto>().ReverseMap();
         
+        CreateMap<Ciudad,CiudadPersDto>().ReverseMap();
+        
         CreateMap<Persona,PersonaDto>().ReverseMap();
 
         CreateMap<Persona,PersonaFullDto>().ReverseMap();
+
+        CreateMap<Genero,GeneroDto>().ReverseMap();
+
+        CreateMap<Genero,GeneroPersDto>().ReverseMap();
+
         
     }
 }
