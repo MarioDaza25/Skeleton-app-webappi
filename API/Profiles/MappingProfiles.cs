@@ -29,6 +29,10 @@ public class MappingProfiles : Profile
 
         CreateMap<Genero,GeneroPersDto>().ReverseMap();
 
+        CreateMap<TipoPersona,TipoPersonaDto>().ReverseMap();
+
+        CreateMap<TipoPersona,TipoPxPersonDto>().ReverseMap();
+
         
     }
 }

@@ -1,8 +1,7 @@
 using Aplicacion.Repository;
-using Dominio.Entities;
 using Dominio.Interfaces;
 using Persistencia;
-using Persistencia.Data.Configurations;
+
 
 namespace Aplicacion.UnitOfWork;
 
@@ -128,6 +127,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _salones;
         }
     }
+
     public ITipoPersona TipoPersonas 
     {
         get

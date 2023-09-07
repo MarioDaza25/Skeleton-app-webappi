@@ -52,5 +52,7 @@ public class PersonaConfiguration : IEntityTypeConfiguration<Persona>
                 j.HasKey(t => new {t.IdSalonFk, t.IdPersonaFk});
             }
         );
+
+        
     }
 }
